@@ -1,6 +1,6 @@
 # Apostles4Jesus — apostles4jesus.com
 
-Website for Apostles4Jesus, an Orthodox Christian teaching community with 15K+ followers across social media. Built and maintained by me since 2021, redesigned from scratch into what it is today.
+Website for Apostles4Jesus, an Orthodox Christian teaching community with 15K+ followers across social media. Redesigned from scratch into what it is today.
 
 The site delivers weekly faith content in English and Arabic, so everything — every page, every component — exists in both languages.
 
