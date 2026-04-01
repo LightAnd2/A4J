@@ -1344,9 +1344,33 @@ html[dir="rtl"] .lang-menu{ right:0; left:auto; text-align:right; }
 
   /* Bottom banner */
   .bottom-banner {
+    position: relative !important;
+    display: block !important;
     aspect-ratio: 1900 / 530 !important;
-    min-height: 150px !important;
+    min-height: unset !important;
     height: auto !important;
+  }
+  .bottom-banner-content {
+    position: absolute !important;
+    inset: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 0.5rem !important;
+    text-align: center !important;
+  }
+  .bottom-banner-content h2 {
+    font-size: 0.85rem !important;
+    margin-bottom: 0.2rem !important;
+  }
+  .bottom-banner-content p {
+    font-size: 0.65rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .bottom-banner-content .btn-banner {
+    padding: 0.3rem 0.9rem !important;
+    font-size: 0.65rem !important;
   }
 
   /* Explore images */
@@ -1386,8 +1410,10 @@ html[dir="rtl"] .lang-menu{ right:0; left:auto; text-align:right; }
     height: auto !important;
   }
   .bottom-banner {
+    position: relative !important;
+    display: block !important;
     aspect-ratio: 1900 / 530 !important;
-    min-height: 130px !important;
+    min-height: unset !important;
     height: auto !important;
   }
 }
