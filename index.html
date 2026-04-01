@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
+  <title>Apostles4Jesus - Choose Language</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="assets/img/logo.png">
+  <link rel="apple-touch-icon" href="assets/img/logo.png">
+  <link rel="shortcut icon" href="assets/img/logo.png">
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  
+  <!-- Resource hints for better performance -->
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+  
+  <!-- Styles: load main first, then mobile overrides -->
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="stylesheet" href="assets/css/mobile.css" media="(max-width: 900px)">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGFGTPSRS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0GGFGTPSRS');
+  </script>
+
+  <!-- Enhanced index page styling -->
+  <style>
+    /* Modern index page with advanced animations */
+    .hero {
+      background: #000000;
+      position: relative;
+      overflow: hidden;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 0;
+      width: 100%;
+    }
+    
+    .moving-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: transparent;
+      z-index: 1;
+    }
+    
+    
+    .overlay {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      animation: fadeInUp 1.5s ease-out;
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .brand-block {
+      animation: slideInDown 1s ease-out 0.5s both;
+    }
+    
+    @keyframes slideInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .brand-block img {
+      animation: bounceIn 1s ease-out 1s both;
+      width: 170px;
+      height: 170px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 2px solid rgba(255, 215, 0, 0.4);
+      display: block;
+      margin: 0 auto 1rem;
+    }
+    
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) rotate(-180deg);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.1) rotate(-10deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+    
+    .brand-block h1 {
+      background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+      background-size: 200% 200%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: gradientShift 3s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 800;
+      margin: 1rem 0;
+      text-shadow: 0 0 30px rgba(255, 215, 0, 0.5);
+    }
+    
+    @keyframes glow {
+      from { 
+        text-shadow: 0 0 20px rgba(255, 215, 0, 0.5),
+                     0 0 40px rgba(255, 215, 0, 0.3);
+      }
+      to { 
+        text-shadow: 0 0 30px rgba(255, 215, 0, 0.8),
+                     0 0 60px rgba(255, 215, 0, 0.5);
+      }
+    }
+    
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+    
+    .tagline {
+      font-size: clamp(1.4rem, 4vw, 2.2rem);
+      color: white;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+      margin: 1rem 0 2rem;
+      animation: slideInUp 1s ease-out 1.5s both;
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+    
+    @keyframes slideInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .lang-buttons {
+      animation: slideInUp 1s ease-out 2s both;
+      display: flex;
+      gap: 2rem;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .lang-buttons .btn {
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      padding: 1rem 2.5rem;
+      font-size: 1.05rem;
+      font-weight: 700;
+      border-radius: 8px;
+      min-width: 200px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .lang-buttons .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+      transition: left 0.6s;
+    }
+    
+    .lang-buttons .btn:hover::before {
+      left: 100%;
+    }
+    
+    .lang-buttons .btn:hover {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+    
+    .lang-buttons .btn:active {
+      transform: translateY(-2px) scale(1.02);
+    }
+    
+    .btn.gold {
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      color: #111;
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+    }
+    
+    .btn.blue {
+      background: linear-gradient(45deg, #ffd700, #ffed4e);
+      color: #111;
+      box-shadow: 0 8px 20px rgba(255, 215, 0, 0.3);
+    }
+    
+    /* Floating elements */
+    .floating-icon {
+      position: absolute;
+      opacity: 0.5;
+      animation: float 6s ease-in-out infinite;
+      pointer-events: none;
+      z-index: 1;
+    }
+    
+    .floating-icon img {
+      width: 48px;
+      height: 48px;
+      display: block;
+    }
+    
+    @keyframes float {
+      0%, 100% { 
+        transform: translateY(0px); 
+      }
+      50% { 
+        transform: translateY(-20px); 
+      }
+    }
+    
+    /* Stagger the animation delays for variety */
+    .floating-icon:nth-child(1) { animation-delay: 0s; }
+    .floating-icon:nth-child(2) { animation-delay: 0.5s; }
+    .floating-icon:nth-child(3) { animation-delay: 1s; }
+    .floating-icon:nth-child(4) { animation-delay: 1.5s; }
+    .floating-icon:nth-child(5) { animation-delay: 2s; }
+    .floating-icon:nth-child(6) { animation-delay: 2.5s; }
+    .floating-icon:nth-child(7) { animation-delay: 3s; }
+    .floating-icon:nth-child(8) { animation-delay: 3.5s; }
+    .floating-icon:nth-child(9) { animation-delay: 4s; }
+    .floating-icon:nth-child(10) { animation-delay: 4.5s; }
+    .floating-icon:nth-child(11) { animation-delay: 5s; }
+    .floating-icon:nth-child(12) { animation-delay: 5.5s; }
+    
+    @media (max-width: 900px){
+      .hero {
+        padding: 3rem 1rem;
+      }
+      
+      .brand-block h1{ 
+        font-size: clamp(2.5rem, 10vw, 4rem);
+        margin: 0.5rem 0;
+      }
+      
+      .tagline{ 
+        font-size: clamp(1.2rem, 6vw, 1.8rem);
+        margin: 0.5rem 0 0.8rem;
+      }
+      
+      .lang-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+      }
+      
+      .lang-buttons .btn{ 
+        width: 100%; 
+        max-width: 280px;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+      }
+    }
+    
+    /* Index page footer styling */
+    .site-footer {
+      min-height: auto !important;
+      padding: 1.5rem 1rem !important;
+      margin-top: 0;
+    }
+
+    /* Mobile footer optimization */
+    @media (max-width: 900px) {
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+      
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        height: 100vh;
+      }
+      
+      .hero {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5rem 1rem 0;
+        margin-bottom: 0;
+        overflow: hidden;
+        min-height: calc(100vh - 60px);
+        max-height: calc(100vh - 60px);
+      }
+      
+      .site-footer {
+        flex-shrink: 0;
+        padding: 0.6rem !important;
+        margin: 0 !important;
+        min-height: 60px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        align-items: center !important;
+        background: #f4d03f !important;
+        color: #2c3e50 !important;
+        border-top: 3px solid #d4af37 !important;
+        position: relative !important;
+        z-index: 10 !important;
+      }
+      
+      .site-footer .socials {
+        gap: 0.8rem;
+        margin-bottom: 0.5rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .site-footer .socials a {
+        width: 40px;
+        height: 40px;
+        padding: 8px;
+        background: rgba(44, 62, 80, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+      }
+      
+      .site-footer .socials a:hover {
+        background: rgba(44, 62, 80, 0.2);
+        transform: translateY(-2px);
+      }
+      
+      .site-footer .socials img {
+        width: 20px;
+        height: 20px;
+        filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(2000%) hue-rotate(200deg) brightness(90%) contrast(90%);
+      }
+      
+      .site-footer p {
+        font-size: 0.8rem;
+        line-height: 1.2;
+        margin: 0;
+        text-align: center;
+        color: #2c3e50;
+        font-weight: 600;
+      }
+    }
+    
+    /* Make hero fill entire screen and extend down */
+    .hero {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      position: relative;
+    }
+    
+    /* Ensure full screen coverage */
+    body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    
+    /* Hero fills remaining viewport */
+    .hero {
+      flex: 1;
+      min-height: auto;
+      padding: 2rem 1rem;
+    }
+    
+    /* Ensure footer is always visible */
+    .site-footer {
+      flex-shrink: 0;
+      margin-top: auto;
+    }
+  </style>
+</head>
+<body class="lang-screen">
+
+  <!-- HERO -->
+  <header class="hero">
+    <!-- Moving background animations -->
+    <div class="moving-bg"></div>
+    
+    <!-- Floating decorative elements -->
+    <div class="floating-icon" style="top: 20%; left: 10%; animation-delay: 0s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="top: 30%; right: 15%; animation-delay: 3s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="bottom: 30%; left: 20%; animation-delay: 6s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="bottom: 20%; right: 10%; animation-delay: 9s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="top: 50%; left: 5%; animation-delay: 12s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="top: 60%; right: 5%; animation-delay: 15s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="top: 10%; right: 25%; animation-delay: 18s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="bottom: 50%; right: 30%; animation-delay: 21s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="top: 70%; left: 15%; animation-delay: 24s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="bottom: 10%; left: 40%; animation-delay: 27s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="top: 40%; right: 40%; animation-delay: 30s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    <div class="floating-icon" style="bottom: 70%; left: 5%; animation-delay: 33s;"><img src="assets/img/icons8-orthodox-cross-48.png" alt="Cross" width="48" height="48"></div>
+    
+    <div class="overlay">
+      <div class="brand-block">
+        <img src="assets/img/logo.png" alt="Logo" class="brand-logo"/>
+        <h1>Apostles4Jesus</h1>
+        <p class="tagline">أخوية التعليم الرسولي</p>
+      </div>
+
+      <div class="lang-buttons">
+        <a href="home.html" class="btn gold">Enter English</a>
+        <a href="ar/homear.html" class="btn blue">ادخل العربية</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" style="--icon-size: 60px; --glyph-size: 30px; min-height: 120px; padding: 2rem 1rem; gap: 1.5rem; background: #f4d03f; color: #2c3e50; border-top: 3px solid #d4af37; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+    <div class="socials" style="display: flex; gap: 1.5rem; align-items: center; justify-content: center;">
+      <a href="https://youtube.com/@Apostles4Jesus" target="_blank" rel="noopener" style="width: var(--icon-size); height: var(--icon-size); background: rgba(44, 62, 80, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <img src="assets/img/socials/icons8-youtube-50.png" alt="YouTube" style="width: var(--glyph-size); height: var(--glyph-size); filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(2000%) hue-rotate(200deg) brightness(90%) contrast(90%);"/>
+      </a>
+      <a href="https://facebook.com/Apostles4Jesus" target="_blank" rel="noopener" style="width: var(--icon-size); height: var(--icon-size); background: rgba(44, 62, 80, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <img src="assets/img/socials/icons8-facebook-50.png" alt="Facebook" style="width: var(--glyph-size); height: var(--glyph-size); filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(2000%) hue-rotate(200deg) brightness(90%) contrast(90%);"/>
+      </a>
+      <a href="https://tiktok.com/@Apostles4Jesus" target="_blank" rel="noopener" style="width: var(--icon-size); height: var(--icon-size); background: rgba(44, 62, 80, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <img src="assets/img/socials/icons8-tiktok-50.png" alt="TikTok" style="width: var(--glyph-size); height: var(--glyph-size); filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(2000%) hue-rotate(200deg) brightness(90%) contrast(90%);"/>
+      </a>
+      <a href="mailto:apostles4jesus@gmail.com" style="width: var(--icon-size); height: var(--icon-size); background: rgba(44, 62, 80, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <img src="assets/img/socials/icons8-gmail-50.png" alt="Email" style="width: var(--glyph-size); height: var(--glyph-size); filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(2000%) hue-rotate(200deg) brightness(90%) contrast(90%);"/>
+      </a>
+      <a href="assets/excelfile/Apostle4Jesus_Index v8.xlsx" download title="Download Episode Index" style="width: var(--icon-size); height: var(--icon-size); background: rgba(44, 62, 80, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; text-decoration: none;">
+        <img src="assets/img/socials/icons8-microsoft-excel-50.png" alt="Episode Index" style="width: var(--glyph-size); height: var(--glyph-size); filter: brightness(0) saturate(100%) invert(20%) sepia(15%) saturate(2000%) hue-rotate(200deg) brightness(90%) contrast(90%);"/>
+      </a>
+    </div>
+    <p style="margin: 0; font-size: 0.8rem; font-weight: 600; color: #2c3e50;">© 2026 Apostles4Jesus — Orthodox Faith in English & Arabic</p>
+  </footer>
+
+  <script src="assets/script/script.js"></script>
+</body>
+</html>

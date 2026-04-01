@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About • Apostles4Jesus</title>
+  <meta name="description" content="Learn about Apostles4Jesus mission to teach Orthodox faith in English and Arabic. Meet our team of clergy and teachers dedicated to spiritual education.">
+  <meta name="keywords" content="about apostles4jesus, orthodox mission, faith education, clergy teachers, spiritual teaching, english arabic">
+  <meta name="author" content="Apostles4Jesus">
+  <meta name="robots" content="index, follow">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apostles4jesus.com/about.html">
+  <meta property="og:title" content="About • Apostles4Jesus">
+  <meta property="og:description" content="Learn about Apostles4Jesus mission to teach Orthodox faith in English and Arabic. Meet our team of clergy and teachers dedicated to spiritual education.">
+  <meta property="og:image" content="https://apostles4jesus.com/assets/img/aboutBanner.jpg">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://apostles4jesus.com/about.html">
+  <meta property="twitter:title" content="About • Apostles4Jesus">
+  <meta property="twitter:description" content="Learn about Apostles4Jesus mission to teach Orthodox faith in English and Arabic. Meet our team of clergy and teachers dedicated to spiritual education.">
+  <meta property="twitter:image" content="https://apostles4jesus.com/assets/img/aboutBanner.jpg">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://apostles4jesus.com/about.html">
+  
+  <!-- DNS prefetch for external resources -->
+  <link rel="dns-prefetch" href="//www.googletagmanager.com">
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  
+  <!-- Resource hints for better performance -->
+  <link rel="preconnect" href="https://www.google-analytics.com">
+  <link rel="preconnect" href="https://www.googletagmanager.com">
+
+  <!-- Your shared CSS -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/css/mobile.css" />
+  <link rel="icon" href="assets/img/logo.png" type="image/png" />
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGFGTPSRS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0GGFGTPSRS');
+  </script>
+
+  <style>
+    body { background: #fff; }
+
+    .page-banner--about {
+      background-image: url('assets/img/aboutBanner.jpg');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    .page-banner--about::after {
+      content: ""; position: absolute; inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,.15), rgba(0,0,0,.15));
+    }
+
+    /* ── Page header ── */
+    .about-header {
+      padding: 3rem 1rem 2.5rem;
+      text-align: center;
+      border-bottom: 1px solid #e8e0c8;
+    }
+    .about-header h1 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      color: #111;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .about-divider { width: 60px; height: 3px; background: #d4af37; margin: 0 auto; }
+
+    /* ── Info pillars ── */
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: #faf8f2;
+      border-bottom: 1px solid #e8e0c8;
+    }
+    .pillar {
+      padding: 2.5rem 2rem;
+      border-right: 1px solid #e8e0c8;
+      border-top: 4px solid #d4af37;
+    }
+    .pillar:last-child { border-right: none; }
+    .pillar h2 {
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #d4af37;
+      margin-bottom: 0.8rem;
+    }
+    .pillar p {
+      font-size: 0.95rem;
+      color: #555;
+      line-height: 1.85;
+    }
+
+    /* ── Team section ── */
+    .team-section { padding: 3rem 1rem; }
+    .team-section-header { text-align: center; margin-bottom: 2.5rem; }
+    .team-section-header h2 {
+      font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #111;
+      margin-bottom: 0.8rem;
+    }
+    .team-section-header p { font-size: 1rem; color: #666; }
+    .team-divider { width: 60px; height: 3px; background: #d4af37; margin: 0 auto 0.8rem; }
+
+    .team-grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1160px;
+      margin: 0 auto;
+    }
+    .team-card {
+      background: #fff;
+      border: 1px solid #e8e0c8;
+      border-top: 3px solid #d4af37;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    .team-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 14px 36px rgba(0,0,0,0.12);
+    }
+    .team-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .team-card .body { padding: 1.4rem 1.5rem 1.8rem; }
+    .team-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #111;
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+    .team-card .role {
+      text-align: center;
+      color: #d4af37;
+      font-weight: 700;
+      font-size: 0.88rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 1rem;
+    }
+    .team-card p { font-size: 0.9rem; color: #555; line-height: 1.75; margin-bottom: 0.75rem; }
+    .team-card p:last-child { margin-bottom: 0; }
+
+    @media (max-width: 900px) {
+      .pillars { grid-template-columns: 1fr; }
+      .pillar { border-right: none; border-top: none; border-left: 4px solid #d4af37; border-bottom: 1px solid #e8e0c8; }
+      .pillar:last-child { border-bottom: none; }
+      .team-grid { grid-template-columns: 1fr; }
+      .team-card img {
+        width: 200px !important;
+        height: 200px !important;
+        object-fit: cover !important;
+        object-position: center top !important;
+        border: 3px solid #d4af37 !important;
+        border-radius: 8px !important;
+        display: block !important;
+        margin: 1rem auto !important;
+        box-shadow: 0 4px 12px rgba(212,175,55,0.3) !important;
+      }
+    }
+
+    /* Auto-sizing banners */
+    .page-banner {
+      aspect-ratio: 1900 / 530 !important;
+      min-height: unset !important;
+      height: auto !important;
+    }
+
+    /* Bottom banner */
+    .bottom-banner {
+      position: relative;
+      aspect-ratio: 1900 / 530 !important;
+      min-height: 160px !important;
+      height: auto !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('assets/img/aboutBanner.jpg');
+      background-size: cover;
+      background-position: center;
+      text-align: center;
+      border-top: 4px solid #d4af37;
+      border-bottom: 4px solid #d4af37;
+    }
+    .bottom-banner-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.72);
+    }
+    .bottom-banner-content {
+      position: relative;
+      z-index: 2;
+      padding: 1.5rem 1rem;
+    }
+    .bottom-banner-content h2 {
+      font-size: clamp(1.1rem, 2.5vw, 1.8rem);
+      color: #fff;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+    }
+    .bottom-banner-content p {
+      color: rgba(255,255,255,0.85);
+      font-size: clamp(0.75rem, 1.5vw, 0.95rem);
+      margin-bottom: 1.2rem;
+    }
+    .btn-banner {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      background: #d4af37;
+      color: #111;
+      font-weight: 700;
+      font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      text-decoration: none;
+      border: 2px solid #d4af37;
+      border-radius: 4px;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+    }
+    .btn-banner:hover { background: transparent; color: #d4af37; }
+  </style>
+</head>
+<body>
+
+  <!-- ======= NAVBAR (unchanged) ======= -->
+  <nav class="site-nav">
+    <div class="container nav-inner">
+      <a class="brand" href="home.html">
+        <img src="assets/img/logo.png" alt="A4J Logo" />
+        <span>Apostles4Jesus</span>
+      </a>
+
+      <button class="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <a class="nav-lang-pill" href="ar/aboutar.html">AR</a>
+
+      <div class="nav-links" id="navLinks">
+        <a href="home.html">Home</a>
+        <a href="episodes.html">Episodes</a>
+        <a href="live.html">Watch Live</a>
+        <a class="active" href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+
+        <a class="lang-btn" href="ar/aboutar.html">EN</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ======= IMAGE-ONLY BANNER ======= -->
+  <section class="page-banner page-banner--about" aria-hidden="true"></section>
+
+  <!-- ======= ABOUT HEADER ======= -->
+  <div class="about-header">
+    <h1>Who We Are</h1>
+    <div class="about-divider"></div>
+  </div>
+
+  <!-- ======= PILLARS ======= -->
+  <div class="pillars">
+    <div class="pillar">
+      <h2>History</h2>
+      <p>
+        Apostles4Jesus is a self-managed, self-funded, and self-ruled organization founded in April 2019
+        by <strong>Karam Shammas</strong> and <strong>Laith Koja</strong>, members of St. George Antiochian Orthodox Church in Troy, Michigan.
+        Later, <strong>Dr. Adnan Traboulsi</strong>, a member of St. George Antiochian Orthodox Church in Houston, joined as theological supervisor.
+      </p>
+    </div>
+    <div class="pillar">
+      <h2>Mission</h2>
+      <p>
+        The mission of Apostles4Jesus is to preach and teach the Orthodox Faith both in Arabic and English to all people worldwide,
+        to make Orthodox Christians more involved in their faith, and to share with non-Orthodox the teachings of our Lord Jesus Christ
+        as expressed and delivered to us within the Holy Orthodox Church.
+      </p>
+    </div>
+    <div class="pillar">
+      <h2>Vision</h2>
+      <p>
+        To make the Orthodox faith, in all aspects of Church life, understandable and acceptable to everyone who is serious about salvation.
+      </p>
+    </div>
+  </div>
+
+  <!-- ======= TEAM SECTION ======= -->
+  <section class="team-section">
+    <div class="team-section-header">
+      <div class="team-divider"></div>
+      <h2>The Mission Board</h2>
+      <p>Founders and leadership serving the mission of Apostles4Jesus.</p>
+    </div>
+
+    <div class="team-grid">
+
+      <!-- Karam -->
+      <article class="team-card">
+        <img src="assets/img/karam.png" alt="Karam Shammas" />
+        <div class="body">
+          <h3>Karam Shammas</h3>
+          <div class="role">Founder • Media Director</div>
+          <p>
+            With a background in mechanical engineering, Karam studied theology at St. Joseph's Cathedral.
+            Karam was converted from Catholicism to Orthodoxy by an Orthodox priest in the Sultanate of Oman.
+            Karam was active in the church since his childhood and absorbed from Orthodoxy.
+          </p>
+          <p>
+            He obtained a diploma in theology from the St. John of Damascus Institute at the University of Balamand in 2019.
+            Karam is the founder, TV director, and has a long experience in TV production, responsible for program development and public relations.
+          </p>
+        </div>
+      </article>
+
+      <!-- Laith -->
+      <article class="team-card">
+        <img src="assets/img/laith.png" alt="Laith Koja" />
+        <div class="body">
+          <h3>Laith Koja</h3>
+          <div class="role">Founder • Program Director</div>
+          <p>
+            With a background in Computer and Network Engineering and with long experience in business management and development,
+            Laith studied religions comparison from an early age of his life. Also he studied the theological differences among the Christian churches.
+          </p>
+          <p>
+            Laith came from the Chaldean Catholic Church and was converted into Orthodoxy after a long search and aggressive study.
+            Laith is a founder, producer, program director and website designer. Laith is well educated in the Orthodox faith.
+          </p>
+        </div>
+      </article>
+
+      <!-- Dr. Adnan -->
+      <article class="team-card">
+        <img src="assets/img/adnan.png" alt="Dr. Adnan Traboulsi, MD" />
+        <div class="body">
+          <h3>Dr. Adnan Traboulsi, MD</h3>
+          <div class="role">Theological Director</div>
+          <p>
+            Dr. Traboulsi is a very well known author of more than 14 published books in Arabic and English, and has a long experience in teaching, preaching in Orthodox theology.
+            Dr. Traboulsi is a disciple of late Father Spiro Jabbour, the brilliant theologian and author in the Antiochian Church.
+          </p>
+          <p>
+            Dr. Traboulsi is the mission supervisor and educational and theological director and advisor, and active in outreach program.
+            Dr. Traboulsi is a Pediatrician practicing in Houston, Texas.
+          </p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- BOTTOM BANNER -->
+  <section class="bottom-banner">
+    <div class="bottom-banner-overlay"></div>
+    <div class="bottom-banner-content">
+      <h2>Browse Our Episodes</h2>
+      <p>Weekly Orthodox teaching in English and Arabic</p>
+      <a href="episodes.html" class="btn-banner">View Episodes</a>
+    </div>
+  </section>
+
+  <!-- ======= FOOTER (uses your PNG social icons) ======= -->
+  <footer class="site-footer">
+    <div class="socials">
+      <a href="https://www.facebook.com/Apostles4Jesus/" target="_blank" rel="noopener">
+        <img src="assets/img/socials/icons8-facebook-50.png" alt="Facebook" />
+      </a>
+      <a href="https://www.youtube.com/@Apostles4Jesus" target="_blank" rel="noopener">
+        <img src="assets/img/socials/icons8-youtube-50.png" alt="YouTube" />
+      </a>
+      <a href="mailto:apostles4jesus@gmail.com">
+        <img src="assets/img/socials/icons8-gmail-50.png" alt="Email" />
+      </a>
+      <a href="https://www.tiktok.com/@apostles4jesus" target="_blank" rel="noopener">
+        <img src="assets/img/socials/icons8-tiktok-50.png" alt="TikTok" />
+      </a>
+      <a href="assets/excelfile/Apostle4Jesus_Index v8.xlsx" download title="Download Episode Index">
+        <img src="assets/img/socials/icons8-microsoft-excel-50.png" alt="Episode Index" width="42" height="42"/>
+      </a>
+    </div>
+    <p>© 2026 Apostles4Jesus - Orthodox Faith in English and Arabic</p>
+  </footer>
+
+  <!-- ===== BACK TO TOP BUTTON ===== -->
+  <button id="backToTop" class="back-to-top" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--gold);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+    cursor: pointer;
+    display: block;
+    z-index: 1000;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    transition: all 0.3s ease;
+  " title="Back to Top">
+    ↑
+  </button>
+
+  <!-- Your shared JS (navbar toggle + language menu) -->
+  <script src="assets/script/script.js" defer></script>
+  <script>
+    // Back to top functionality
+    const backToTopButton = document.getElementById('backToTop');
+    
+    window.addEventListener('scroll', function() {
+      if (window.pageYOffset > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+    
+    backToTopButton.addEventListener('click', function() {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+</body>
+</html>

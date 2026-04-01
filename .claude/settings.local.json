@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -E \"og:url|og:title|og:image|og:description|twitter:\" /c/Users/Andrew/Desktop/A4J/ar/*.html)"
+    ]
+  }
+}
