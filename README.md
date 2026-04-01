@@ -4,7 +4,7 @@ A fully bilingual Orthodox Christian teaching website built for a real community
 
 Live at [apostles4jesus.com](https://apostles4jesus.com)
 
-![Apostles4Jesus Preview](preview.png)
+![Apostles4Jesus Preview](preview.webp)
 
 ---
 
