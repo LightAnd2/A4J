@@ -30,7 +30,19 @@
     <meta property="twitter:description" content="تعليم الإيمان الأرثوذكسي بالعربية والإنجليزية.">
     <meta property="twitter:image" content="https://apostles4jesus.com/assets/img/homebanner.jpg">
 
+    <!-- Language memory -->
+    <script>
+      localStorage.setItem('a4j_lang','ar');
+      document.addEventListener('DOMContentLoaded',function(){
+        document.querySelectorAll('.nav-lang-pill,.lang-btn').forEach(function(el){
+          el.addEventListener('click',function(){localStorage.setItem('a4j_lang','en');});
+        });
+      });
+    </script>
     <link rel="canonical" href="https://apostles4jesus.com/ar/homear.html">
+    <link rel="alternate" hreflang="ar" href="https://apostles4jesus.com/ar/homear.html">
+    <link rel="alternate" hreflang="en" href="https://apostles4jesus.com/home.html">
+    <link rel="alternate" hreflang="x-default" href="https://apostles4jesus.com/home.html">
     <link rel="icon" type="image/png" href="../assets/img/logo.png">
     <link rel="apple-touch-icon" href="../assets/img/logo.png">
 

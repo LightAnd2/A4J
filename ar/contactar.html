@@ -19,7 +19,19 @@
   <meta property="twitter:title" content="تواصل معنا • أخوية التعليم الرسولي">
   <meta property="twitter:description" content="تواصل مع أخوية التعليم الرسولي لأسئلتك حول الإيمان الأرثوذكسي أو طلبات التعليم.">
   <meta property="twitter:image" content="https://apostles4jesus.com/assets/img/contactBanner.jpg">
+  <!-- Language memory -->
+  <script>
+    localStorage.setItem('a4j_lang','ar');
+    document.addEventListener('DOMContentLoaded',function(){
+      document.querySelectorAll('.nav-lang-pill,.lang-btn').forEach(function(el){
+        el.addEventListener('click',function(){localStorage.setItem('a4j_lang','en');});
+      });
+    });
+  </script>
   <link rel="canonical" href="https://apostles4jesus.com/ar/contactar.html">
+  <link rel="alternate" hreflang="ar" href="https://apostles4jesus.com/ar/contactar.html">
+  <link rel="alternate" hreflang="en" href="https://apostles4jesus.com/contact.html">
+  <link rel="alternate" hreflang="x-default" href="https://apostles4jesus.com/contact.html">
 
   <!-- DNS prefetch for external resources -->
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
