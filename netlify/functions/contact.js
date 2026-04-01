@@ -1,6 +1,42 @@
+// Simple in-memory rate limiter (resets on function cold start)
+const rateLimit = new Map();
+const RATE_LIMIT = 5;        // max submissions
+const RATE_WINDOW = 60 * 60 * 1000; // per hour (ms)
+
+function isRateLimited(ip) {
+  const now = Date.now();
+  const entry = rateLimit.get(ip) || { count: 0, start: now };
+
+  // Reset window if expired
+  if (now - entry.start > RATE_WINDOW) {
+    entry.count = 0;
+    entry.start = now;
+  }
+
+  entry.count++;
+  rateLimit.set(ip, entry);
+  return entry.count > RATE_LIMIT;
+}
+
+// Strip all HTML tags and trim whitespace
+function sanitize(str) {
+  return String(str).replace(/<[^>]*>/g, '').trim();
+}
+
+// Basic email format check
+function isValidEmail(email) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
+
 exports.handler = async (event) => {
   if (event.httpMethod !== 'POST') {
     return { statusCode: 405, body: 'Method Not Allowed' };
+  }
+
+  // Rate limiting by IP
+  const ip = event.headers['x-forwarded-for'] || event.headers['client-ip'] || 'unknown';
+  if (isRateLimited(ip)) {
+    return { statusCode: 429, body: JSON.stringify({ error: 'Too many requests. Please try again later.' }) };
   }
 
   let data;
@@ -16,7 +52,18 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Missing fields' }) };
   }
 
-  // verify recaptcha
+  // Sanitize all inputs
+  const cleanFirst   = sanitize(firstName).slice(0, 100);
+  const cleanLast    = sanitize(lastName).slice(0, 100);
+  const cleanEmail   = sanitize(email).slice(0, 200);
+  const cleanMessage = sanitize(message).slice(0, 5000);
+
+  // Validate email format
+  if (!isValidEmail(cleanEmail)) {
+    return { statusCode: 400, body: JSON.stringify({ error: 'Invalid email address' }) };
+  }
+
+  // Verify reCAPTCHA
   const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -29,7 +76,7 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Spam detected' }) };
   }
 
-  // send email
+  // Send email
   const res = await fetch('https://api.resend.com/emails', {
     method: 'POST',
     headers: {
@@ -39,13 +86,13 @@ exports.handler = async (event) => {
     body: JSON.stringify({
       from: 'contact@apostles4jesus.com',
       to: 'apostles4jesus@gmail.com',
-      reply_to: email,
-      subject: `[A4J] Message from ${firstName} ${lastName}`,
+      reply_to: cleanEmail,
+      subject: `[A4J] Message from ${cleanFirst} ${cleanLast}`,
       html: `
-        <p><b>Name:</b> ${firstName} ${lastName}</p>
-        <p><b>Email:</b> ${email}</p>
+        <p><b>Name:</b> ${cleanFirst} ${cleanLast}</p>
+        <p><b>Email:</b> ${cleanEmail}</p>
         <p><b>Message:</b></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${cleanMessage.replace(/\n/g, '<br>')}</p>
       `
     })
   });
