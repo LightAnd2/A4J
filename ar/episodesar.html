@@ -36,6 +36,8 @@
   <link rel="alternate" hreflang="en" href="https://apostles4jesus.com/episodes.html">
   <link rel="alternate" hreflang="x-default" href="https://apostles4jesus.com/episodes.html">
   <link rel="icon" type="image/png" href="../assets/img/logo.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#d4af37">
   <link rel="apple-touch-icon" href="../assets/img/logo.png">
 
   <link rel="dns-prefetch" href="//www.googletagmanager.com">
@@ -396,6 +398,7 @@
   <button id="backToTop" class="back-to-top" title="العودة للأعلى">↑</button>
 
   <script src="../assets/script/script.js"></script>
+  <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
   <script>
     const backToTopButton = document.getElementById('backToTop');
     window.addEventListener('scroll', function() {

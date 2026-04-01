@@ -87,6 +87,8 @@
     .btn-banner:hover { background: transparent; color: #d4af37; }
   </style>
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#d4af37">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGFGTPSRS"></script>
@@ -215,6 +217,7 @@
   </footer>
 
   <script src="assets/script/script.js" defer></script>
+  <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
   <script>
     // Use YouTube IFrame Player API to detect actual live stream state
     var tag = document.createElement('script');

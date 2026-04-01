@@ -44,6 +44,8 @@
     <link rel="alternate" hreflang="en" href="https://apostles4jesus.com/home.html">
     <link rel="alternate" hreflang="x-default" href="https://apostles4jesus.com/home.html">
     <link rel="icon" type="image/png" href="../assets/img/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#d4af37">
     <link rel="apple-touch-icon" href="../assets/img/logo.png">
 
     <link rel="preload" href="../assets/css/style.css" as="style">
@@ -714,6 +716,7 @@
   <button id="backToTop" class="back-to-top" title="العودة للأعلى">↑</button>
 
   <script src="../assets/script/script.js"></script>
+  <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
   <script>
     // YouTube click-to-load facades
     document.querySelectorAll('.yt-facade').forEach(function(facade) {

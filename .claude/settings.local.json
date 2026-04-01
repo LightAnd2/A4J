@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -E \"og:url|og:title|og:image|og:description|twitter:\" /c/Users/Andrew/Desktop/A4J/ar/*.html)"
+      "Bash(grep -E \"og:url|og:title|og:image|og:description|twitter:\" /c/Users/Andrew/Desktop/A4J/ar/*.html)",
+      "Bash(grep -n \"tabindex\\\\|role=tab\\\\|accordion\\\\|modal\\\\|carousel\" /Users/andrew/Desktop/A4J/*.html /Users/andrew/Desktop/A4J/ar/*.html)"
     ]
   }
 }

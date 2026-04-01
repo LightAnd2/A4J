@@ -4,13 +4,24 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Page Not Found • Apostles4Jesus</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to Apostles4Jesus — Orthodox Faith teaching in English and Arabic.">
   <meta name="robots" content="noindex">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://apostles4jesus.com/404.html">
+  <meta property="og:title" content="Page Not Found • Apostles4Jesus">
+  <meta property="og:description" content="The page you're looking for doesn't exist. Return to Apostles4Jesus.">
+  <meta property="og:image" content="https://apostles4jesus.com/assets/img/homebanner.jpg">
+
   <link rel="icon" href="assets/img/logo.png" type="image/png" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#d4af37">
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="assets/css/mobile.css" />
   <style>
     .not-found {
-      min-height: 70vh;
+      min-height: 60vh;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -78,6 +89,25 @@
     </div>
   </section>
 
+  <footer class="site-footer">
+    <div class="socials">
+      <a href="https://youtube.com/@Apostles4Jesus" target="_blank" rel="noopener">
+        <img src="assets/img/socials/icons8-youtube-50.png" alt="YouTube" width="42" height="42"/>
+      </a>
+      <a href="https://facebook.com/Apostles4Jesus" target="_blank" rel="noopener">
+        <img src="assets/img/socials/icons8-facebook-50.png" alt="Facebook" width="42" height="42"/>
+      </a>
+      <a href="mailto:apostles4jesus@gmail.com" title="Email Us">
+        <img src="assets/img/socials/icons8-gmail-50.png" alt="Email" width="42" height="42"/>
+      </a>
+      <a href="https://www.tiktok.com/@apostles4jesus" target="_blank" rel="noopener">
+        <img src="assets/img/socials/icons8-tiktok-50.png" alt="TikTok" width="42" height="42"/>
+      </a>
+    </div>
+    <p>© 2026 Apostles4Jesus - Orthodox Faith in English and Arabic</p>
+  </footer>
+
   <script src="assets/script/script.js" defer></script>
+  <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
 </body>
 </html>

@@ -45,6 +45,8 @@
   <link rel="stylesheet" href="../assets/css/style.css" />
   <link rel="stylesheet" href="../assets/css/mobile.css" />
   <link rel="icon" href="../assets/img/logo.png" type="image/png" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#d4af37">
 
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-0GGFGTPSRS"></script>
@@ -212,7 +214,7 @@
       </div>
       <div class="f col-12">
         <label for="email">البريد الإلكتروني</label>
-        <input id="email" name="email" type="email" placeholder="example@email.com" required />
+        <input id="email" name="email" type="email" placeholder="your@email.com" required />
       </div>
       <div class="f col-12">
         <label for="message">رسالتك</label>
@@ -309,6 +311,7 @@
 
   <script src="https://www.google.com/recaptcha/api.js?render=6LckuaAsAAAAAH6TZqBjcfv1KR65iDr96cjdyksv" async defer></script>
   <script src="../assets/script/script.js" defer></script>
+  <script>if('serviceWorker' in navigator) navigator.serviceWorker.register('/sw.js');</script>
   <script>
     document.getElementById('contactForm').addEventListener('submit', async function(e) {
       e.preventDefault();
