@@ -1,43 +1,71 @@
 # Apostles4Jesus | apostles4jesus.com
 
-Website for Apostles4Jesus, an Orthodox Christian teaching community with 15K+ followers across social media. Redesigned from scratch into what it is today.
+A fully bilingual Orthodox Christian teaching website built for a real community with 15K+ followers across social media platforms. Every page, every component, and every line of copy exists in both English and Arabic with full RTL layout support.
 
-The site delivers weekly faith content in English and Arabic, so everything (every page, every component) exists in both languages.
+Live at [apostles4jesus.com](https://apostles4jesus.com)
 
-## What's on the site
+---
 
-- **Home** - mission, featured episodes, intro video
-- **Episodes** - full YouTube playlist library
-- **Live** - embedded live stream with active/offline detection
-- **About** - team and mission
-- **Contact** - form with real backend
+## What it is
+
+Five pages in English, five in Arabic. Each language has its own complete experience including navigation, banners, forms, and content — not a translation overlay, but a fully mirrored site.
+
+- **Home** - mission statement, featured episodes, intro video
+- **Episodes** - full YouTube playlist library organized by series
+- **Live** - embedded live stream with real-time active/offline detection via YouTube IFrame API
+- **About** - team bios and organizational mission
+- **Contact** - form with a real serverless backend
+
+---
 
 ## How it's built
 
-Vanilla HTML, CSS, and JavaScript. No frameworks. Two shared stylesheets handle global styles and mobile responsiveness across all 10 pages. Arabic pages use RTL layout throughout.
+No frameworks. Vanilla HTML, CSS, and JavaScript from scratch.
 
-The contact form runs on a real serverless backend using Netlify Functions (Node.js) with reCAPTCHA v3 spam detection, rate limiting, input sanitization, and email delivery through the Resend API.
+Two shared stylesheets keep everything consistent — `style.css` for global design tokens, components, and layout, and `mobile.css` for 1300+ lines of responsive overrides across every breakpoint. Arabic pages use RTL layout throughout with mirrored spacing, flex direction, and border logic.
 
-The site is also a PWA, so it's installable on mobile, works offline, and caches all pages and assets through a service worker.
+The contact form is backed by a real **Node.js serverless function** on Netlify with:
+- Google reCAPTCHA v3 (invisible, score-based spam detection)
+- IP-based rate limiting (5 submissions per hour)
+- Server-side input sanitization and email validation
+- Transactional email delivery via Resend API
+- All secrets stored in environment variables, nothing hardcoded
 
-## Tech used
+The site is a **PWA** — installable from the browser, fully cached by a service worker, and functional offline.
 
-- HTML / CSS / JavaScript
-- Node.js (Netlify Functions)
-- Google reCAPTCHA v3
-- Resend API
-- Netlify (hosting + CI/CD)
-- GitHub (version control)
-- Google Analytics
+---
+
+## Tech stack
+
+| Area | Tech |
+|------|------|
+| Frontend | HTML, CSS, JavaScript |
+| Backend | Node.js (Netlify Functions) |
+| Spam protection | Google reCAPTCHA v3 |
+| Email | Resend API |
+| Hosting | Netlify |
+| Version control | GitHub |
+| Analytics | Google Analytics |
+
+---
 
 ## Performance
 
-All images converted to WebP. Lazy loading on below-fold images. YouTube facades replace iframes until clicked. Service worker pre-caches everything after first visit.
+- All images converted to WebP (cut image weight by ~80%)
+- Native lazy loading on all below-fold images
+- YouTube click-to-load facades replace iframes until user interaction
+- Service worker pre-caches all 10 pages, CSS, JS, and images on first visit
+- Repeat visits load near-instantly from cache
 
 ## Security
 
-Content Security Policy, X-Frame-Options, rate limiting on the contact form, server-side input sanitization, and all API keys stored in environment variables and never in the code.
+- Content Security Policy, X-Frame-Options, X-Content-Type-Options via Netlify headers
+- Rate limiting, input sanitization, and email validation on the contact backend
+- No API keys or secrets anywhere in the codebase
 
-## Live site
+## SEO
 
-[apostles4jesus.com](https://apostles4jesus.com)
+- Full meta tags, Open Graph, and Twitter Card on all 10 pages
+- hreflang tags linking each English page to its Arabic counterpart
+- sitemap.xml and robots.txt
+- Language memory via localStorage with automatic redirect for returning Arabic users
