@@ -338,6 +338,13 @@
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
       const status = document.getElementById('formStatus');
+      const emailVal = document.getElementById('email').value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        status.textContent = 'Please enter a valid email address.';
+        status.className = 'form-status error';
+        return;
+      }
+
       btn.disabled = true;
       btn.textContent = 'Sending...';
       status.className = 'form-status';

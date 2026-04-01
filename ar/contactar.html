@@ -302,6 +302,13 @@
       e.preventDefault();
       const btn = document.getElementById('submitBtn');
       const status = document.getElementById('formStatus');
+      const emailVal = document.getElementById('email').value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal)) {
+        status.textContent = 'يرجى إدخال بريد إلكتروني صحيح.';
+        status.className = 'form-status error';
+        return;
+      }
+
       btn.disabled = true;
       btn.textContent = 'جاري الإرسال...';
       status.className = 'form-status';
