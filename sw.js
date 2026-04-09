@@ -1,4 +1,4 @@
-const CACHE = 'a4j-v1';
+const CACHE = 'a4j-v2';
 
 const PRECACHE = [
   '/home.html',

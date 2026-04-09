@@ -20,7 +20,13 @@ function isRateLimited(ip) {
 
 // Strip all HTML tags and trim whitespace
 function sanitize(str) {
-  return String(str).replace(/<[^>]*>/g, '').trim();
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#x27;')
+    .trim();
 }
 
 // Basic email format check
