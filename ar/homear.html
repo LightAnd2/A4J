@@ -35,6 +35,11 @@
       (function() {
         var params = new URLSearchParams(location.search);
         var explicitLang = params.get('lang');
+        var pendingLang = sessionStorage.getItem('a4j_lang_pending');
+
+        if (pendingLang === 'ar' || explicitLang === 'ar') {
+          sessionStorage.removeItem('a4j_lang_pending');
+        }
 
         localStorage.setItem('a4j_lang', 'ar');
 

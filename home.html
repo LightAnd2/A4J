@@ -35,9 +35,18 @@
       (function() {
         var params = new URLSearchParams(location.search);
         var explicitLang = params.get('lang');
+        var pendingLang = sessionStorage.getItem('a4j_lang_pending');
+
+        if (pendingLang === 'en') {
+          localStorage.setItem('a4j_lang', 'en');
+          sessionStorage.removeItem('a4j_lang_pending');
+          if (location.search) history.replaceState(null, '', location.pathname + location.hash);
+          return;
+        }
 
         if (explicitLang === 'en') {
           localStorage.setItem('a4j_lang', 'en');
+          sessionStorage.removeItem('a4j_lang_pending');
           if (location.search) history.replaceState(null, '', location.pathname + location.hash);
           return;
         }
