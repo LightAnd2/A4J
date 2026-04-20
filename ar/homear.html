@@ -32,12 +32,24 @@
 
     <!-- Language memory -->
     <script>
-      localStorage.setItem('a4j_lang','ar');
-      document.addEventListener('DOMContentLoaded',function(){
-        document.querySelectorAll('.nav-lang-pill,.lang-btn').forEach(function(el){
-          el.addEventListener('click',function(){localStorage.setItem('a4j_lang','en');});
+      (function() {
+        var params = new URLSearchParams(location.search);
+        var explicitLang = params.get('lang');
+
+        localStorage.setItem('a4j_lang', 'ar');
+
+        if (location.search) {
+          history.replaceState(null, '', location.pathname + location.hash);
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+          document.querySelectorAll('.nav-lang-pill,.lang-btn').forEach(function(el) {
+            el.addEventListener('click', function() {
+              localStorage.setItem('a4j_lang', 'en');
+            });
+          });
         });
-      });
+      })();
     </script>
     <link rel="canonical" href="https://apostles4jesus.com/ar/homear.html">
     <link rel="alternate" hreflang="ar" href="https://apostles4jesus.com/ar/homear.html">

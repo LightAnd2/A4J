@@ -35,6 +35,15 @@
     gtag('js', new Date());
     gtag('config', 'G-0GGFGTPSRS');
   </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('[data-lang-choice]').forEach(function(link) {
+        link.addEventListener('click', function() {
+          localStorage.setItem('a4j_lang', link.getAttribute('data-lang-choice'));
+        });
+      });
+    });
+  </script>
 
   <!-- Enhanced index page styling -->
   <style>
@@ -448,8 +457,8 @@
       </div>
 
       <div class="lang-buttons">
-        <a href="home.html" class="btn gold" onclick="localStorage.setItem('a4j_lang','en')">Enter English</a>
-        <a href="ar/homear.html" class="btn blue" onclick="localStorage.setItem('a4j_lang','ar')">ادخل العربية</a>
+        <a href="home.html?lang=en" class="btn gold" data-lang-choice="en">Enter English</a>
+        <a href="ar/homear.html?lang=ar" class="btn blue" data-lang-choice="ar">ادخل العربية</a>
       </div>
     </div>
   </header>

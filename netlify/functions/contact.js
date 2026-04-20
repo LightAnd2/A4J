@@ -58,6 +58,16 @@ exports.handler = async (event) => {
     return { statusCode: 400, body: JSON.stringify({ error: 'Missing fields' }) };
   }
 
+  if (!process.env.RECAPTCHA_SECRET) {
+    console.error('Missing RECAPTCHA_SECRET environment variable');
+    return { statusCode: 500, body: JSON.stringify({ error: 'reCAPTCHA not configured' }) };
+  }
+
+  if (!process.env.RESEND_API_KEY) {
+    console.error('Missing RESEND_API_KEY environment variable');
+    return { statusCode: 500, body: JSON.stringify({ error: 'Email service not configured' }) };
+  }
+
   // Sanitize all inputs
   const cleanFirst   = sanitize(firstName).slice(0, 100);
   const cleanLast    = sanitize(lastName).slice(0, 100);
@@ -70,15 +80,32 @@ exports.handler = async (event) => {
   }
 
   // Verify reCAPTCHA
+  const params = new URLSearchParams({
+    secret: process.env.RECAPTCHA_SECRET,
+    response: token
+  });
+
   const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: `secret=${process.env.RECAPTCHA_SECRET}&response=${token}`
+    body: params.toString()
   });
 
-  const { success, score } = await verify.json();
+  if (!verify.ok) {
+    console.error('reCAPTCHA verification request failed', verify.status);
+    return { statusCode: 502, body: JSON.stringify({ error: 'reCAPTCHA verification failed' }) };
+  }
 
-  if (!success || score < 0.5) {
+  const { success, score, action, hostname, 'error-codes': errorCodes } = await verify.json();
+
+  if (!success || score < 0.5 || action !== 'contact') {
+    console.error('reCAPTCHA rejected submission', {
+      success,
+      score,
+      action,
+      hostname,
+      errorCodes
+    });
     return { statusCode: 400, body: JSON.stringify({ error: 'Spam detected' }) };
   }
 
